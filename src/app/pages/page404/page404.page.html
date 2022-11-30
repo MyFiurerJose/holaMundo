@@ -1,0 +1,17 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <strong>
+        <ion-card-title color="danger">Página No encontrada!!!</ion-card-title>
+      </strong>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Ups!!! parece que el contenido que buscas no existe en nuestra app...</p>
+    </ion-card-content>
+    <ion-item routerLink="" class="ion-actived" color="danger">
+      <ion-icon  name="arrow-undo-outline"></ion-icon>
+    </ion-item>
+  </ion-card>
+</ion-content>

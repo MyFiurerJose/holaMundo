@@ -1,0 +1,16 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-buttons >
+    <ion-button color="success" [routerLink]="['/login']">
+      <ion-icon name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  
+  <div id="container">
+
+    <p>Hola! Revisa nuestro <a target="_self" rel="noopener noreferrer"
+        href="about">Perfil</a></p>
+  </div>
+
+</ion-content>

@@ -2,4 +2,25 @@
 
 <ion-content>
 
+        <ion-text>
+            <ion-list>
+                <h3>El valor del Euro: {{ indicadorEuro }}</h3>
+                <h3>El valor del Dolar: {{ indicadorDolar }}</h3>
+                <h1>Conversor a pesos</h1>
+                <ion-item>
+                    <ion-label position="floating">Ingrese valor</ion-label>
+                    <ion-input type="number" [(ngModel)]="valor"></ion-input>
+                </ion-item>
+
+                <ion-button shape="block" (click)="calcular()">convertir </ion-button>
+
+                <ion-item>
+                    <h2>En euros: {{ valorEnEuro }}</h2>
+                </ion-item>
+
+                <ion-item>
+                    <h2>En dolares: {{ valorEnDolar }}</h2>
+                </ion-item>
+            </ion-list>
+        </ion-text>
 </ion-content>

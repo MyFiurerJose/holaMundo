@@ -1,0 +1,23 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle">
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Entradas</ion-title>
+    </ion-toolbar>
+</app-header>
+
+<ion-content>
+
+  <item-list>
+    <ion-item *ngFor="let entrada of entradas" (click)="irDetalle(entrada)">
+      <ion-label>
+        <h2>{{entrada.fecha}}</h2>
+        <p>{{entrada.rut}}</p>
+        <p>{{entrada.nombre}}</p>
+        <p>{{entrada.correo}}</p>
+      </ion-label>
+    </ion-item>
+  </item-list>
+  
+</ion-content>

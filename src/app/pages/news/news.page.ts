@@ -9,7 +9,8 @@ import { $ } from 'protractor';
 })
 export class NewsPage implements OnInit {
 
-  pageTitle='Noticias';
+  isNotHome = true;
+  pageTitle='Coversor';
   listadoIndicadores: any;
   indicadorEuro: any;
   indicadorDolar: any;

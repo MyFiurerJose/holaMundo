@@ -9,7 +9,7 @@ import {OpenweathermapService } from '../../services/openweathermap/openweatherm
 })
 export class ProductsPage implements OnInit {
 
-  pageTitle='Productos';
+  pageTitle='Clima en tu ciudad';
   isNotHome=true;
 
   weather: any;

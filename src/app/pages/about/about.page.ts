@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPage implements OnInit {
 
-  pageTitle = 'about';
+  pageTitle = 'Sobre Nosotros';
   isNotHome = true;
 
   constructor() { }

@@ -1,4 +1,11 @@
-<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</app-header>
 
 <ion-content> 
     <div class="container p=4">

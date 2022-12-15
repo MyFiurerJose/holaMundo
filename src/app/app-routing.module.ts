@@ -1,50 +1,49 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoGuard } from './ingresado.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },  
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'logins',
     pathMatch: 'full'
-  },
-  {
-    path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   },
   {
     path: '404',
     loadChildren: () => import('./pages/page404/page404.module').then( m => m.Page404PageModule)
   },
   {
-    path: 'contact',
-    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
-  },
-  {
     path: 'under-construction',
-    loadChildren: () => import('./pages/under-construction/under-construction.module').then( m => m.UnderConstructionPageModule)
+    loadChildren: () => import('./pages/under-construction/under-construction.module').then( m => m.UnderConstructionPageModule),
+    canActivate: [NoIngresadoGuard]
   },  
   {
-    path: 'news',
-    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
+    path: 'logins',
+    loadChildren: () => import('./logins/logins.module').then( m => m.LoginsPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
-    path: 'products',
-    loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: '**',
     redirectTo: '404'
-  }
-];
+  },
 
+];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

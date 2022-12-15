@@ -27,6 +27,10 @@ export class RegistroPage implements OnInit {
         Validators.required,
         Validators.minLength(3)
       ])),
+      password2: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(3)
+      ]))
     });
   }
 
